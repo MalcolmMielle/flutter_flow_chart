@@ -94,6 +94,13 @@ class Dashboard extends ChangeNotifier {
     notifyListeners();
   }
 
+  void addAll(List<FlowElement> elements) {
+    removeAllElements();
+    for (var i = 0; i < elements.length; ++i) {
+      addElement(elements[i]);
+    }
+  }
+
   /// remove all the elements with [id] from the dashboard
   removeElementById(String id) {
     // remove the element
